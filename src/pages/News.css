@@ -1,0 +1,96 @@
+/* src/pages/News.css */
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #001f3f; /* Navy background */
+    min-height: calc(100vh - 60px); /* Kurangi tinggi navbar (60px) */
+    color: #8b00007b; /* Dark red for text color */
+    animation: fadeIn 1.5s ease-in-out;
+    box-sizing: border-box; /* Pastikan padding tidak menambah tinggi total */
+    padding-bottom: 80px; /* Ruang ekstra di bawah konten */
+}
+
+.news-title {
+    font-size: 2.5rem;
+    color: #8B0000; /* Dark red title */
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.news-card {
+    background-color: #8b00003f; /* Dark red background for contrast */
+    border: 2px solid #8b000000; /* Dark red border */
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    width: 90%;
+    max-width: 600px;
+    color: #ffffff; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: slideIn 0.8s forwards ease;
+    animation-delay: calc(0.1s * var(--i)); /* Delay for staggered animation */
+}
+
+.news-card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.news-card-title {
+    font-size: 1.8rem;
+    color: #fafafa; /* Light color for title */
+    margin: 0 0 10px;
+    text-decoration: none;
+}
+
+.news-card-description {
+    font-size: 1rem;
+    color: #ffffff; /* White text for description */
+}
+
+.news-link {
+    text-decoration: none;
+    color: #ffffff; /* White text for link */
+    transition: color 0.3s ease;
+}
+
+.news-link:hover {
+    color: hsl(0, 0%, 100%); /* Pure white on hover */
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .news-title {
+        font-size: 2rem;
+    }
+
+    .news-card-title {
+        font-size: 1.5rem;
+    }
+
+    .news-card {
+        padding: 15px;
+    }
+
+    .news-container {
+        padding-bottom: 65px; /* Sesuaikan untuk navbar lebih kecil di mobile */
+    }
+}

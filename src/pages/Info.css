@@ -1,0 +1,126 @@
+/* src/pages/Info.css */
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px; /* Reduced padding */
+    background-color: #001f3f; /* Navy background */
+    min-height: calc(100vh - 60px); /* Kurangi tinggi navbar (60px) */
+    color: #8B0000;
+    animation: fadeIn 1.2s ease-in-out;
+    box-sizing: border-box; /* Pastikan padding tidak menambah tinggi elemen */
+    padding-bottom: 70px; /* Ruang ekstra untuk konten di atas navbar */
+}
+
+.info-title {
+    font-size: 1.8rem; /* Smaller font size for mobile */
+    color: #ffffff; /* White title */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.info-card {
+    background-color: #8b00003d; /* Dark red background */
+    border: 1px solid #8b000000; /* Dark red border */
+    border-radius: 8px;
+    padding: 12px; /* Reduced padding */
+    margin: 10px 0; /* Reduced margin */
+    width: 90%; /* Narrower for mobile */
+    max-width: 450px; /* Smaller max-width for mobile */
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transform: translateY(0);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    opacity: 0;
+    animation: slideUp 0.7s forwards ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+.info-card-title {
+    font-size: 1.3rem; /* Smaller font size for title */
+    color: #ffffff;
+    margin: 0 0 8px;
+    text-decoration: none;
+}
+
+.info-image {
+    width: 100%;
+    border-radius: 6px; /* Smaller radius */
+    margin: 8px 0;
+    transition: transform 0.3s ease;
+}
+
+.info-image:hover {
+    transform: scale(1.03); /* Slight zoom on hover */
+}
+
+.info-card-description {
+    font-size: 0.85rem; /* Smaller font size for mobile */
+    color: #ffffff;
+}
+
+.read-more {
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 8px;
+    font-size: 0.9rem; /* Smaller font size */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #ffffff; /* Maintain color on hover */
+}
+
+/* Loading and Error Styles */
+.loading, .error {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+    color: #ffffff; /* White text */
+    margin: 15px 0;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Additional Mobile Optimization */
+@media (max-width: 600px) {
+    .info-title {
+        font-size: 1.6rem;
+    }
+
+    .info-card-title {
+        font-size: 1.1rem;
+    }
+
+    .info-card {
+        padding: 10px;
+        max-width: 100%; /* Full width for very small screens */
+    }
+
+    .info-card-description {
+        font-size: 0.8rem;
+    }
+
+    .read-more {
+        font-size: 0.85rem;
+    }
+
+    .info-container {
+        padding-bottom: 65px; /* Adjust bottom padding for smaller navbar */
+    }
+}
